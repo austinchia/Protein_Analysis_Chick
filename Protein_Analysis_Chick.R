@@ -65,4 +65,6 @@ ratio_combined <- chick_export %>%
   # converts all NaN into NAs, removes NAs
   na_if("NaN") %>%
   na.omit() #3626 rows left
-  
+
+# exports data matrix for further analysis (using MetaboAnalyst)  
+fwrite(data.frame(ratio_combined), "Output/Chick_Combined.csv", sep = ",")
